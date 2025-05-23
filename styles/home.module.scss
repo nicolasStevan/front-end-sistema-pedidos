@@ -1,0 +1,56 @@
+.containerCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #fdfdfd;
+  padding: 1rem;
+
+  h1 {
+    font-size: 3rem;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .amigo {
+    color: #ff6347; // vermelho tomate
+  }
+
+  .pizza {
+    color: #ffa500; // laranja
+  }
+
+  p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 2rem;
+  }
+
+  form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    gap: 1rem;
+
+    a {
+      color: #333;
+      font-size: 0.95rem;
+      text-align: center;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #001f3f;
+        text-decoration: underline;
+      }
+    }
+  }
+}

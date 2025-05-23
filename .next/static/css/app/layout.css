@@ -1,0 +1,79 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./styles/globals.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --primary: #0d47a1;
+  --primary-light: #5472d3;
+  --primary-dark: #002171;
+  --secondary: #6c757d;
+  --secondary-light: #a2a9af;
+  --secondary-dark: #494f54;
+  --success: #28a745;
+  --success-light: #5ec978;
+  --success-dark: #1c7430;
+  --danger: #dc3545;
+  --danger-light: #f07a8a;
+  --danger-dark: #a71d2a;
+  --warning: #ffc107;
+  --warning-light: #ffe57f;
+  --warning-dark: #c79100;
+  --info: #17a2b8;
+  --info-light: #7cd2e0;
+  --info-dark: #0d5c6b;
+  --font-size: 16px;
+  --font-size-small: 14px;
+  --font-size-large: 18px;
+  --spacing: 1rem;
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: var(--font-size);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-size);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  :root {
+    --font-size: 13px;
+  }
+}
