@@ -1,11 +1,37 @@
+"use client"
+
+import { useContext } from 'react';
+
 import Head from 'next/head';
 import styles from '../../styles/home.module.scss';
-import { Input } from '../components/ui/input/index'
+import { Input } from '../components/ui/input/index';
 import { Button } from '../components/ui/button/index';
+
+import { AuthContext } from './contexts/AuthContext';
 
 import Link from 'next/link';
 
 export default function Home() {
+  const { signIn } = useContext(AuthContext);
+
+  async function handleLogin(event) {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    if (!email || !password) {
+      alert('Por favor, preencha todos os campos.');
+      return;
+    }
+
+    try {
+      await signIn({ email, password });
+    } catch (error) {
+      console.error('Erro ao fazer login:', error);
+      alert('Erro ao fazer login. Verifique suas credenciais.');
+    }
+  }
+
   return (
     <>
       <Head>
@@ -16,37 +42,38 @@ export default function Home() {
       </Head>
       <div className={styles.containerCenter}>
         <h1>
-        <span className={styles.amigo}>Amigo</span>{' '}
-        <span className={styles.pizza}>Pizza</span>
+          <span className={styles.amigo}>Amigo</span>{' '}
+          <span className={styles.pizza}>Pizza</span>
         </h1>
         <p>Faça o seu login para continuar</p>
         <div>
-            <form action="">
-              <Input 
+          <form onSubmit={handleLogin}>
+            <Input
               placeholder='Digite seu e-mail'
               type='text'
-              />
-              <Input 
+              name='email'
+            />
+            <Input
               placeholder='Digite sua senha'
               type='password'
-              />
-              <Button type='submit' loading={false}> 
+              name='password'
+            />
+            <Button type='submit' loading={false}>
               Acessar
+            </Button>
+
+            <Link href="/register">
+              <Button type='button'>
+                Criar conta
               </Button>
+            </Link>
 
-              <Link href="/register">
-                <Button type='button' >
-                  Criar conta
-                </Button>
-              </Link>
-            
-              <Link href="/forgot">
-                <Button type='button' >
-                  Esqueci minha senha
-                </Button>
-              </Link>
-
-            </form>
+            <Link href="/forgot">
+              <Button type='button'>
+                Esqueci minha senha
+              </Button>
+            </Link>
+          </form>
         </div>
       </div>
     </>

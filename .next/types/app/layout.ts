@@ -1,4 +1,4 @@
-// File: C:\Users\nicol\OneDrive\Ambiente de Trabalho\Sistema-de-Pedidos\Sistema-de-Pedidos\frontend\src\app\layout.tsx
+// File: C:\Users\nicol\OneDrive\Ambiente de Trabalho\frontend\src\app\layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

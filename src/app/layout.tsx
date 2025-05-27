@@ -1,6 +1,9 @@
 // app/layout.tsx
 
-import '../../styles/globals.scss' // importa os estilos globais
+import '../../styles/globals.scss';
+import { AuthProvider } from './contexts/AuthContext';
+import React from 'react';
+
 
 export const metadata = {
   title: 'Pizzaria entre amigos',
@@ -11,8 +14,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <body>
-        {/* Aqui você pode colocar Providers, Layouts fixos, etc */}
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   )
