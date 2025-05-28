@@ -1,6 +1,6 @@
 "use client"
 
-import { useContext } from 'react';
+import { useContext,useState } from 'react';
 
 import Head from 'next/head';
 import styles from '../../styles/home.module.scss';
@@ -14,6 +14,11 @@ import Link from 'next/link';
 export default function Home() {
   const { signIn } = useContext(AuthContext);
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [loading, setLoading] = useState(false);
+
   async function handleLogin(event) {
     event.preventDefault();
     const email = event.target.email.value;
@@ -24,8 +29,14 @@ export default function Home() {
       return;
     }
 
+    // let data = {
+    //   email,
+    //   password
+    // };
+
     try {
       await signIn({ email, password });
+      setLoading(true);
     } catch (error) {
       console.error('Erro ao fazer login:', error);
       alert('Erro ao fazer login. Verifique suas credenciais.');
@@ -52,11 +63,15 @@ export default function Home() {
               placeholder='Digite seu e-mail'
               type='text'
               name='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <Input
               placeholder='Digite sua senha'
               type='password'
               name='password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <Button type='submit' loading={false}>
               Acessar

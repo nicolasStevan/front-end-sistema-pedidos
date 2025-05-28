@@ -30,7 +30,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const isAuthenticated = !!user;
 
     async function signIn({ email, password }: SignInProps) {
-        console.log('Sign in with', email, password);
+        console.log('Logado com:', email, password);
         alert('Login realizado com sucesso!');
     }
 
