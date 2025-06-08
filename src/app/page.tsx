@@ -6,6 +6,7 @@ import Head from 'next/head';
 import styles from '../../styles/home.module.scss';
 import { Input } from '../components/ui/input/index';
 import { Button } from '../components/ui/button/index';
+import { toast } from 'react-toastify';
 
 import { AuthContext } from './contexts/AuthContext';
 
@@ -25,9 +26,11 @@ export default function Home() {
     const password = event.target.password.value;
 
     if (!email || !password) {
-      alert('Por favor, preencha todos os campos.');
+      toast.warning('Por favor, preencha todos os campos.');
       return;
     }
+
+    setLoading(true); 
 
     // let data = {
     //   email,

@@ -5,6 +5,8 @@ import { destroyCookie, setCookie } from 'nookies';
 import { useRouter } from 'next/navigation';
 import { api } from '../services/apiClient';
 
+import { toast } from 'react-toastify';
+
 type AuthContextType = {
     user: UserProps | null;
     isAuthenticated: boolean;
@@ -62,13 +64,31 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
             api.defaults.headers['Authorization'] = `Bearer ${token}`;
 
+            toast.success('Login realizado com sucesso!', {
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            });
+
             console.log('Before push to dashboard');
             router.push('/dashboard');
             console.log('After push to dashboard');
 
         } catch (error: any) {
+              toast.error('Erro ao fazer login. Verifique suas credenciais.', {
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            });
             console.error('Error during sign in:', error);
-            alert(error.response?.data?.message || 'Error during sign in. Please try again.');
         }
     }
 
@@ -76,11 +96,29 @@ export function AuthProvider({ children }: AuthProviderProps) {
         try {
             const response = await api.post('/users', { name, email, password });
             console.log('User created:', response.data);
-            alert('User created successfully!');
+            
+            toast.success('Cadastro realizado com sucesso!', {
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            });
+
             router.push('/');
         } catch (error: any) {
             console.error('Error during sign up:', error);
-            alert(error.response?.data?.message || 'Error during sign up. Please try again.');
+            toast.error(error.response?.data?.message || 'Erro ao cadastrar. Verifique seus dados.', {
+                autoClose: 3000,
+                hideProgressBar: false, 
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored',
+            });
         }
     }
 
