@@ -1,7 +1,7 @@
 "use client";
 
-import { createContext, ReactNode, useState } from "react";
-import { destroyCookie, setCookie } from "nookies";
+import { createContext, ReactNode, useState, useEffect } from "react";
+import { destroyCookie, setCookie, parseCookies } from "nookies";
 import { useRouter } from "next/navigation";
 import { api } from "../services/apiClient";
 
@@ -42,6 +42,23 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<UserProps | null>(null);
   const isAuthenticated = !!user;
   const router = useRouter();
+
+  useEffect(() => {
+    const { "nextauth.token": token } = parseCookies();
+
+    if (token) {
+      api.defaults.headers["Authorization"] = `Bearer ${token}`;
+
+      api.get("/me")
+        .then(response => {
+          setUser(response.data);
+        })
+        .catch(error => {
+          console.error("Error fetching user data:", error);
+          signOut();
+        });
+    }
+  }, []);
 
   async function signIn({ email, password }: SignInProps) {
   try {

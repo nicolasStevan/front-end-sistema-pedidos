@@ -1,0 +1,54 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./src/components/Header/header.module.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.header_header__P90l2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+.header_logo__nodcL {
+  font-size: 2.5rem;
+  font-family: "Lobster", cursive;
+  display: flex;
+  align-items: center;
+}
+.header_logo__nodcL .header_amigo__lMd41 {
+  color: #ffcc29;
+}
+.header_logo__nodcL .header_pizza__ee06Z {
+  color: #ff4040;
+}
+
+.header_navList__e3RUn {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.header_navList__e3RUn li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.header_navList__e3RUn li a:hover {
+  color: #ffcc29;
+}
+
+.header_logoutButton__mrVjv {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+.header_logoutButton__mrVjv:hover {
+  background-color: #ff4d4d;
+  color: white;
+}
