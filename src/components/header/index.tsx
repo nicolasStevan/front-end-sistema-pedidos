@@ -23,9 +23,8 @@ export function Header() {
       <nav>
         <ul className={styles.navList}>
           <li><Link href="/">Home</Link></li>
-          <li><Link href="/menu">Menu</Link></li>
-          <li><Link href="/about">Sobre nós</Link></li>
-          <li><Link href="/contact">Contato</Link></li>
+          <li><Link href="/category">Categoria</Link></li>
+          <li><Link href="/about">Cardapio</Link></li>
           <li>
             <button 
               onClick={handleLogout} 
