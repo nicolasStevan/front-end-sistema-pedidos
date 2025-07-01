@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 // rotas privadas que exigem login
-const protectedRoutes = ['/dashboard', '/pedidos'];
+const protectedRoutes = ['/dashboard', '/pedidos', '/category', '/product'];
 
 export function middleware(req: NextRequest) {
   // pegar cookie pelo nome exato que você setou
