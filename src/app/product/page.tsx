@@ -2,7 +2,7 @@
 
 import Head from 'next/head';
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
-import { Header } from '../../components/Header'; 
+import { Header } from '../../components/Header';
 import styles from './style.module.scss';
 import { FiUpload } from 'react-icons/fi';
 import { setupAPIClient } from '../services/api';
@@ -11,8 +11,9 @@ import { toast } from 'react-toastify';
 export default function Product() {
   const [avatarUrl, setAvatarUrl] = useState('');
   const [imageAvatar, setImageAvatar] = useState<File | null>(null);
-  const [categories, setCategories] = useState<any[]>([]);
-  const [categorySelected, setCategorySelected] = useState('');
+
+  const [categories, setCategories] = useState([]);
+  const [categorySelected, setCategorySelected] = useState<string>('');
 
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
@@ -23,12 +24,22 @@ export default function Product() {
       const apiClient = setupAPIClient();
       try {
         const response = await apiClient.get('/category');
-        setCategories(response.data);
+        const data = response.data;
+
+        if (Array.isArray(data) && data.length > 0) {
+          setCategories(data);
+          setCategorySelected(data[0].id); // primeira categoria como padrão
+        } else {
+          setCategories([]);
+          setCategorySelected('');
+        }
       } catch (error) {
         console.error('Erro ao buscar categorias:', error);
         setCategories([]);
+        setCategorySelected('');
       }
     }
+
     loadCategories();
   }, []);
 
@@ -36,6 +47,7 @@ export default function Product() {
     if (!event.target.files) return;
 
     const image = event.target.files[0];
+
     if (!image) {
       setAvatarUrl('');
       return;
@@ -47,45 +59,45 @@ export default function Product() {
     } else {
       alert('Apenas imagens JPEG ou PNG são permitidas.');
       setAvatarUrl('');
-      setImageAvatar(null);
     }
   }
 
   async function handleRegister(event: FormEvent) {
     event.preventDefault();
 
-    if (!categorySelected) {
-      toast.error('Selecione uma categoria!');
-      return;
-    }
-
-    if (!imageAvatar || name === '' || price === '' || description === '') {
+    if (!name || !price || !description || !imageAvatar || !categorySelected) {
       toast.error('Preencha todos os campos!');
       return;
     }
 
-    const data = new FormData();
-    data.append('name', name);
-    data.append('price', price);
-    data.append('description', description);
-    data.append('category_id', categorySelected);
-    data.append('file', imageAvatar);
-
     try {
       const apiClient = setupAPIClient();
-      await apiClient.post('/product', data);
+      const data = new FormData();
 
+      data.append('name', name);
+      data.append('price', price);
+      data.append('description', description);
+      data.append('category_id', categorySelected);
+      data.append('file', imageAvatar);
+
+      // Debug para ver o que está sendo enviado
+      for (let pair of data.entries()) {
+        console.log(`${pair[0]}:`, pair[1]);
+      }
+
+      const response = await apiClient.post('/product', data);
       toast.success('Produto cadastrado com sucesso!');
+
+      // Limpa o formulário
       setName('');
       setPrice('');
       setDescription('');
-      setCategorySelected('');
       setAvatarUrl('');
       setImageAvatar(null);
-
+      setCategorySelected(categories[0]?.id || '');
     } catch (err) {
       console.error('Erro ao cadastrar produto:', err);
-      toast.error('Erro ao cadastrar produto, tente novamente.');
+      toast.error('Erro ao cadastrar produto. Tente novamente.');
     }
   }
 
@@ -98,9 +110,10 @@ export default function Product() {
       <main className={styles.container}>
         <h1>Cadastro de Novo Produto</h1>
         <form className={styles.form} onSubmit={handleRegister}>
-
           <label className={styles.labelAvatar}>
-            <span><FiUpload size={25} color="#000" /></span>
+            <span>
+              <FiUpload size={25} color="#000" />
+            </span>
             <input type="file" accept="image/*" onChange={handleFile} />
             {avatarUrl && (
               <img
@@ -118,10 +131,9 @@ export default function Product() {
             <input
               type="text"
               id="name"
-              name="name"
-              required
               value={name}
-              onChange={e => setName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
+              required
             />
           </div>
 
@@ -130,10 +142,9 @@ export default function Product() {
             <input
               type="number"
               id="price"
-              name="price"
-              required
               value={price}
-              onChange={e => setPrice(e.target.value)}
+              onChange={(e) => setPrice(e.target.value)}
+              required
             />
           </div>
 
@@ -141,14 +152,15 @@ export default function Product() {
             <label htmlFor="category">Categoria</label>
             <select
               id="category"
-              name="category"
-              required
               value={categorySelected}
-              onChange={e => setCategorySelected(e.target.value)}
+              onChange={(e) => setCategorySelected(e.target.value)}
+              required
             >
               <option value="">Selecione uma categoria</option>
-              {categories.map(category => (
-                <option key={category.id} value={category.id}>{category.name}</option>
+              {categories.map((category: any) => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
               ))}
             </select>
           </div>
@@ -157,10 +169,9 @@ export default function Product() {
             <label htmlFor="description">Descrição</label>
             <textarea
               id="description"
-              name="description"
-              required
               value={description}
-              onChange={e => setDescription(e.target.value)}
+              onChange={(e) => setDescription(e.target.value)}
+              required
               rows={4}
             />
           </div>

@@ -1,0 +1,56 @@
+.container{
+    max-width: 720px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+
+    display: flex;
+    flex-direction: column;
+
+}
+.container h1{
+    font-size: 2rem;
+    color: var(--text-title);
+}
+.containerHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+
+    button{
+        margin-left: 1rem;
+    }
+}
+
+.listOrders{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+.orderItem{
+    display: flex;
+    flex-direction: row;
+    background: #041a58;
+    margin-bottom: 1rem;
+    align-items: center;    
+    border-radius: 0.3rem;
+
+    button{
+        border: 0;
+        background: transparent;
+        color: var(--text-title);
+        font-size: 1.5rem;
+        height: 60px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+.tag{
+    width: 9px;
+    background-color: #04d361;
+    height: 60px;
+    border-radius: 0.3rem 0 0 0.3rem;
+    margin-right: 1rem;
+}
