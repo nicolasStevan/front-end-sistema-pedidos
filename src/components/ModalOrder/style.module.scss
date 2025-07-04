@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.modalOrder {
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  color: #ffffff;
+  border-bottom: 2px solid #00b4d8;
+  padding-bottom: 0.5rem;
+}
+
+.heading {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #00b4d8;
+  margin-bottom: -0.5rem;
+}
+
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+
+  span {
+    background-color: #132c45;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0, 180, 216, 0.2);
+  }
+}
+
+.totalSection {
+  text-align: center;
+  background-color: #132c45;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 0 12px rgba(0, 180, 216, 0.4);
+  animation: bounce 0.6s ease;
+
+  span {
+    font-size: 1.2rem;
+    color: #ddd;
+  }
+
+  strong {
+    display: block;
+    font-size: 2rem;
+    color: #00b4d8;
+    margin-top: 0.5rem;
+  }
+}
+
+.concludeButton {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.5rem;
+  background-color: #00b4d8;
+  border: none;
+  border-radius: 8px;
+  color: #0d1b2a;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  align-self: center;
+
+  &:hover {
+    background-color: #0096c7;
+    transform: scale(1.05);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: transparent;
+  border: none;
+  color: #f34748;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

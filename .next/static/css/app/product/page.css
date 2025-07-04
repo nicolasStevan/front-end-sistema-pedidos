@@ -1,0 +1,159 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./src/components/Header/header.module.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.header_header__P90l2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+.header_logo__nodcL {
+  font-size: 2.5rem;
+  font-family: "Lobster", cursive;
+  display: flex;
+  align-items: center;
+}
+.header_logo__nodcL .header_amigo__lMd41 {
+  color: #ffcc29;
+}
+.header_logo__nodcL .header_pizza__ee06Z {
+  color: #ff4040;
+}
+
+.header_navList__e3RUn {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.header_navList__e3RUn li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.header_navList__e3RUn li a:hover {
+  color: #ffcc29;
+}
+
+.header_logoutButton__mrVjv {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+.header_logoutButton__mrVjv:hover {
+  background-color: #ff4d4d;
+  color: white;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./src/app/product/style.module.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.style_container__4Z521 {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.style_container__4Z521 h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.style_form__rGyx1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.style_formGroup__6_K4P {
+  display: flex;
+  flex-direction: column;
+}
+.style_formGroup__6_K4P label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+.style_formGroup__6_K4P input,
+.style_formGroup__6_K4P select,
+.style_formGroup__6_K4P textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+.style_formGroup__6_K4P input:focus,
+.style_formGroup__6_K4P select:focus,
+.style_formGroup__6_K4P textarea:focus {
+  border-color: #ff5a00;
+  outline: none;
+}
+.style_formGroup__6_K4P textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.style_formGroup__6_K4P input[type=file] {
+  padding: 0.4rem 0.3rem;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.style_buttonSubmit__MpVUd {
+  padding: 0.75rem;
+  background-color: #ff5a00;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.style_buttonSubmit__MpVUd:hover {
+  background-color: #e64a00;
+}
+
+.style_labelAvatar__0xiQq {
+  width: 100%;
+  height: 280px;
+  background-color: #f0f0f0;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.style_labelAvatar__0xiQq input {
+  display: none;
+}
+.style_labelAvatar__0xiQq span {
+  z-index: 99;
+  position: absolute;
+  opacity: 0.8;
+  transition: all 0.7s;
+}
+.style_labelAvatar__0xiQq span:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.style_preview__1kf3P {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.3rem;
+}

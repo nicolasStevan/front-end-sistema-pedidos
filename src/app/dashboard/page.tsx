@@ -123,22 +123,12 @@ export default function Dashboard() {
           </article>
 
           {modalIsOpen && (
-            <Modal
+            <ModalOrder
               isOpen={modalIsOpen}
               onRequestClose={handleCloseModal}
-              overlayClassName="react-modal-overlay"
-              className="react-modal-content"
-            >
-              <button
-                type="button"
-                onClick={handleCloseModal}
-                className="react-modal-close"
-              >
-                <FiRefreshCcw size={25} color="#f34748" />
-              </button>
-
-              <ModalOrder modalItem={modalItem} />
-            </Modal>
+              order={modalItem}
+            
+            />
           )}
 
         </main>

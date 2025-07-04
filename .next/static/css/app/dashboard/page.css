@@ -1,3 +1,126 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./src/components/ModalOrder/style.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+.style_overlay__Udhf5 {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.style_modalOrder__pTrpH {
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: style_fadeIn__Aj31E 0.3s ease-in-out;
+}
+
+.style_title__NuH84 {
+  font-size: 2rem;
+  text-align: center;
+  color: #ffffff;
+  border-bottom: 2px solid #00b4d8;
+  padding-bottom: 0.5rem;
+}
+
+.style_heading__QkdGc {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #00b4d8;
+  margin-bottom: -0.5rem;
+}
+
+.style_itemList__lATUq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+.style_itemList__lATUq span {
+  background-color: #132c45;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 180, 216, 0.2);
+}
+
+.style_totalSection__FPt2K {
+  text-align: center;
+  background-color: #132c45;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: 0 0 12px rgba(0, 180, 216, 0.4);
+  animation: style_bounce__DOjg7 0.6s ease;
+}
+.style_totalSection__FPt2K span {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+.style_totalSection__FPt2K strong {
+  display: block;
+  font-size: 2rem;
+  color: #00b4d8;
+  margin-top: 0.5rem;
+}
+
+.style_concludeButton__wDX09 {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.5rem;
+  background-color: #00b4d8;
+  border: none;
+  border-radius: 8px;
+  color: #0d1b2a;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  align-self: center;
+}
+.style_concludeButton__wDX09:hover {
+  background-color: #0096c7;
+  transform: scale(1.05);
+}
+
+.style_closeButton__Udv1Y {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: transparent;
+  border: none;
+  color: #f34748;
+}
+.style_closeButton__Udv1Y:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+@keyframes style_fadeIn__Aj31E {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes style_bounce__DOjg7 {
+  0% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./.yarn/__virtual__/next-virtual-5dfd0f0fa3/4/AppData/Local/Yarn/Berry/cache/next-npm-15.3.1-0ae97302b9-10c0.zip/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./src/app/dashboard/style.module.scss ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
