@@ -1,6 +1,7 @@
 {
-  "/category/page": "app/category/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
   "/page": "app/page.js",
-  "/product/page": "app/product/page.js"
+  "/product/page": "app/product/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/register/page": "app/register/page.js",
+  "/category/page": "app/category/page.js"
 }

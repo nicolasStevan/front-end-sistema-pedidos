@@ -7,12 +7,9 @@ import style from './style.module.scss';
 import { FiRefreshCcw } from 'react-icons/fi';
 
 import { Header } from '../../components/Header';
-
 import { setupAPIClient } from '../services/api';
 import { toast } from 'react-toastify';
-
 import { ModalOrder } from '../../components/ModalOrder';
-
 import Modal from 'react-modal';
 
 interface OrderProps {
@@ -34,7 +31,7 @@ export type OrderItemProps = {
     price: number;
     description: string;
     file: string;
-  }
+  };
   order: {
     id: string;
     table: number;
@@ -42,7 +39,7 @@ export type OrderItemProps = {
     name?: string;
     draft: boolean;
   };
-}
+};
 
 export default function Dashboard() {
   const { signOut, user } = useContext(AuthContext);
@@ -50,7 +47,6 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(false);
   const [modalItem, setModalItem] = useState<OrderItemProps[]>();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
 
   async function loadOrders() {
     try {
@@ -75,21 +71,45 @@ export default function Dashboard() {
     setModalItem(undefined);
   }
 
- async function handleOpenModalView(id: string) {
+  async function handleFinishItem(id: string) {
     const apiClient = setupAPIClient();
 
-    const response = apiClient.get('/order/detail',{
-      params: {
+    try {
+      await apiClient.put('/order/finish', {
         orderId: id,
-      }
-    })
-    setModalItem((await response).data);
-    setModalIsOpen(true);
+      });
+
+      toast.success('Pedido finalizado com sucesso!');
+      handleCloseModal();
+      loadOrders();
+    } catch (err) {
+      console.error(err);
+      toast.error('Erro ao finalizar pedido!');
+    }
   }
 
-   useEffect(() => {
+  async function handleOpenModalView(id: string) {
+    const apiClient = setupAPIClient();
+
+    try {
+      const response = await apiClient.get('/order/detail', {
+        params: {
+          orderId: id,
+        },
+      });
+
+      setModalItem(response.data);
+      setModalIsOpen(true);
+    } catch (err) {
+      console.error(err);
+      toast.error('Erro ao buscar detalhes do pedido.');
+    }
+  }
+
+  useEffect(() => {
     Modal.setAppElement('#modal-root');
   }, []);
+
   return (
     <>
       <Head>
@@ -97,13 +117,12 @@ export default function Dashboard() {
       </Head>
       <div>
         <Header />
-        
+
         <main className={style.container}>
           <div className={style.containerHeader}>
             <h1>Últimos Pedidos</h1>
             <button onClick={loadOrders} disabled={loading}>
               <FiRefreshCcw size={25} color="#3fffa3" />
-              <span>{loading ? 'Atualizando...' : 'Atualizar'}</span>
             </button>
           </div>
 
@@ -122,15 +141,14 @@ export default function Dashboard() {
             ))}
           </article>
 
-          {modalIsOpen && (
+          {modalIsOpen && modalItem && (
             <ModalOrder
               isOpen={modalIsOpen}
               onRequestClose={handleCloseModal}
               order={modalItem}
-            
+              handleFinishOrder={handleFinishItem}
             />
           )}
-
         </main>
       </div>
     </>

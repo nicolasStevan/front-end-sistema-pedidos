@@ -75,13 +75,9 @@ export default function Home() {
               Acessar
             </Button>
 
-            <Link href="/register">
-              <Button type="button">Criar conta</Button>
-            </Link>
-
-            <Link href="/forgot">
-              <Button type="button">Esqueci minha senha</Button>
-            </Link>
+            <Button type="button" style={{ width: '100%' }} onClick={() => router.push('/register')}>
+             Criar conta
+            </Button>
           </form>
         </div>
       </div>

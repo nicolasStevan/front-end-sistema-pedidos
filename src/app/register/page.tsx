@@ -89,7 +89,7 @@ export default function Register() {
             </Button>
 
             <Link href="/">
-              <Button type='button'>
+              <Button type='button'  style={{ width: '100%' }}>
                 Já tenho uma conta
               </Button>
             </Link>
